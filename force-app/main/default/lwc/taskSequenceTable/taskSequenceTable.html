@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Task Sequence">
+        <template if:true={taskData}>
+            <lightning-datatable
+                key-field="id"
+                data={taskData}
+                columns={columns}
+                hide-checkbox-column="true"
+                onsave={handleSave}
+                draft-values={draftValues}>
+            </lightning-datatable>
+        </template>
+        <template if:false={taskData}>
+            <p class="slds-align_absolute-center">No tasks available.</p>
+        </template>
+    </lightning-card>
+</template>
